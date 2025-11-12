@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor de Gas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <!-- Pantalla de Lista de Sensores -->
+        <section id="sensor-list" class="view">
+            <header>
+                <h1>Sensores de Gas</h1>
+            </header>
+            <div class="figma-link">
+                <a href="https://www.figma.com/design/v43dna8s9CUG7FS5qAWnn0/Untitled?node-id=4-56&t=OeDhJedZwD9a1CKX-1" target="_blank">Ver diseño en Figma</a>
+            </div>
+            <div class="list-container">
+                <div class="sensor-item" data-sensor-id="1">
+                    <span>Sensor de Cocina</span>
+                    <span class="status-ok">OK</span>
+                </div>
+                <div class="sensor-item" data-sensor-id="2">
+                    <span>Sensor de Sala</span>
+                    <span class="status-warning">ALERTA</span>
+                </div>
+                <div class="sensor-item" data-sensor-id="3">
+                    <span>Sensor de Garaje</span>
+                    <span class="status-ok">OK</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Detalle de Sensor -->
+        <section id="sensor-detail" class="view hidden">
+            <header>
+                <button id="back-to-list">← Volver</button>
+                <h1 id="sensor-name">Sensor de Cocina</h1>
+            </header>
+            <div class="detail-container">
+                <div class="gas-level-bar">
+                    <div id="gas-level-fill" style="width: 20%;"></div>
+                </div>
+                <p class="gas-level-text">Nivel de gas: <span id="gas-level-value">20%</span></p>
+                <p class="last-reading">Última lectura: <span id="last-reading-time">10:30 AM</span></p>
+                <div class="detail-buttons">
+                    <button id="trigger-critical">Simular Nivel Crítico</button>
+                    <button id="btn-detail-more-info">Más información</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Alerta Crítica -->
+        <section id="critical-alert" class="view hidden">
+            <div class="alert-content">
+                <div class="warning-symbol">!</div>
+                <h1>NIVEL DE GAS CRÍTICO</h1>
+                <div class="alert-buttons">
+                    <button id="btn-attended">Ya fue atendido</button>
+                    <button id="btn-more-info">Más información</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Historial de Sensor -->
+        <section id="sensor-history" class="view hidden">
+            <header>
+                <button id="back-to-detail">← Volver</button>
+                <h1 id="history-sensor-name">Historial</h1>
+            </header>
+            <div id="history-list-container" class="list-container">
+                <!-- History items will be injected by script.js -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
